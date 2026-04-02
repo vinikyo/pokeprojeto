@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark, Heart, LayoutDashboard } from "lucide-react";
+import { Bookmark, Heart, LayoutDashboard, LogIn, UserPlus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -53,7 +53,24 @@ const pathname = usePathname();
             ))}
         </ul>
     </nav>
-    <div></div>
+    <div className="flex items-center gap-4">
+    <Link 
+    href="/api/auth/login" 
+    className="py-2 px-6 text-sm flex items-center gap-2 font-bold rounded-lg bg-[#6c5ce7]/15 text-[#6c5ce7] hover:bg-[#6c5ce7]/30 transition-all duration-300 ease-in-out"
+    >
+        <LogIn size={20} />
+        Login
+        </Link>
+    <Link 
+    href="/api/auth/login" 
+    className="py-2 px-6 text-sm flex items-center gap-2 font-bold rounded-lg 
+    bg-[#6c5ce7] text-white hover:bg-[#6c5ce7]/90 transition-all duration-300 ease-in-out"
+    >
+        <UserPlus size={20} />
+        Register
+        </Link>
+
+    </div>
     </header>
     );
 }
